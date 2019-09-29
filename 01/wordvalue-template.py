@@ -1,13 +1,12 @@
 from data import DICTIONARY, LETTER_SCORES
 
 def load_words():
-    """Load dictionary into a list and return list"""
-    pass
+    f = open(DICTIONARY, "r")
+    return f.readlines()
 
 def calc_word_value():
-    """Calculate the value of the word entered into function
-    using imported constant mapping LETTER_SCORES"""
-    pass
+    data = load_words()
+    return list(len(word) for word in data)
 
 def max_word_value():
     """Calculate the word with the max value, can receive a list
@@ -16,3 +15,6 @@ def max_word_value():
 
 if __name__ == "__main__":
     pass # run unittests to validate
+
+
+print(calc_word_value())
